@@ -2,11 +2,12 @@ package com.example.randomimageapp.mvp
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import coil.load
 import com.example.randomimageapp.databinding.ActivityMvpBinding
 import com.example.randomimageapp.mvp.model.ImageCountModel
-import com.example.randomimageapp.mvp.repository.ImageRepository
+
 import com.example.randomimageapp.mvp.repository.ImageRepositoryImpl
 
 class MvpActivity :AppCompatActivity(), MvpContractor.View{
@@ -19,11 +20,13 @@ class MvpActivity :AppCompatActivity(), MvpContractor.View{
         binding = ActivityMvpBinding.inflate(layoutInflater).also{
             setContentView(it.root)
             it.view = this
+            Log.d("MvpActivity","onCreate")
         }
 
 
         presenter = MvpPresenter(ImageCountModel(), ImageRepositoryImpl())
         presenter.attachView(this)
+        Log.d("MvpActivity","attachView")
 
     }
 
@@ -35,6 +38,8 @@ class MvpActivity :AppCompatActivity(), MvpContractor.View{
 
     fun loadImage(){
         presenter.loadRandomImage()
+        Log.d("MvpActivity","buttonclick")
+
     }
 
     override fun showImage(url: String, color: String) {
