@@ -16,10 +16,10 @@ class MvvmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMvvmBinding.inflate(layoutInflater).apply{
-            setContentView(this.root)
-            this.lifecycleOwner= this@MvvmActivity
-            this.view =this@MvvmActivity
-            this.viewModel = this@MvvmActivity.viewModel
+            setContentView(root)
+            lifecycleOwner= this@MvvmActivity
+            view =this@MvvmActivity
+            viewModel = this@MvvmActivity.viewModel
 
         }
     }
