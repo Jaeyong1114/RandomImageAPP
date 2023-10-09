@@ -27,9 +27,7 @@ class MainActivity : AppCompatActivity() {
         binding.mvvmButton.setOnClickListener {
             openMVVM()
         }
-        binding.mviButton.setOnClickListener {
-            openMVI()
-        }
+
 
 
 
@@ -51,7 +49,5 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, MvvmActivity::class.java))
 
     }
-    fun openMVI(){
 
-    }
 }
